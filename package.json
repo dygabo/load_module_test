@@ -1,0 +1,20 @@
+{
+  "name": "load_module_test",
+  "version": "0.0.1",
+  "description": "load module test",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "start-with-hooks": "node --import ./lib/register.js src/app.js",
+    "start-with-sync-hooks": "node --import ./lib/register.js src/app.js USE_REGISTER_HOOKS=true",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "import.meta.url",
+    "es-modules",
+    "nodejs",
+    "file-url"
+  ],
+  "author": "Gabriel Bota",
+  "license": "MIT"
+}
