@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node src/app.js",
-    "start-with-hooks": "node --import ./lib/register.js src/app.js",
-    "start-with-sync-hooks": "node --import ./lib/register.js src/app.js USE_REGISTER_HOOKS=true",
+    "start-with-hooks": "node --import ./lib/register.mjs src/app.js",
+    "start-with-sync-hooks": "node --import ./lib/register.mjs src/app.js USE_REGISTER_HOOKS=true",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

@@ -1,5 +1,5 @@
 // app.js
-const Module = require('module');
+const Module = require("module");
 
 const originalLoad = Module._load;
 
@@ -10,10 +10,11 @@ Module._load = function (request, parent, isMain) {
 };
 
 // Example usage: Load some modules
-const fs = require('fs'); // This will trigger the patched _load
-const path = require('path'); // This will also trigger the patched _load
-const http2 = require("node:http2");
+const fs = require("fs");     // This should trigger the patched _load
+const path = require("path"); // This should trigger the patched _load
+const http2 = require("node:http2"); // the builtins don't trigger the evaluate hook
+const code = require("./code"); // this triggers the evaluate hook if available
 
-// Example functionality
-console.log('Current directory:', fs.readdirSync(path.resolve('.')));
-console.log('Monkey-patching complete!');
+// do something
+console.log("Current directory:", fs.readdirSync(path.resolve(".")));
+console.log(`code export: ${code.a}`);
